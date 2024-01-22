@@ -1,0 +1,19 @@
+name: bhargavi example
+
+on:
+  push: 
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: run sample commands of linux
+        run: |
+          echo chandu and bhargavi
+          lsblk
+          ps -ef | grep "apache2"
