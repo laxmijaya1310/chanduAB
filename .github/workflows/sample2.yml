@@ -18,3 +18,18 @@ jobs:
           lsblk
           ps -ef | grep "apache2"
           echo running chandu
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: update apt
+        run: sudo apt update
+      - name: install apache2
+        run: sudo apt install apache2
+      - name : run rest commands
+        run: |
+          apache2 -version
+          sudo ufw app list
+          sudo ufw allow 'Apache'
+          sudo systemctl status apache2
+          hostname -I
