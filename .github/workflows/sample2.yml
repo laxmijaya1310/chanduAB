@@ -29,7 +29,5 @@ jobs:
       - name : run rest commands
         run: |
           apache2 -version
-          sudo ufw app list
-          sudo ufw allow 'Apache'
-          sudo systemctl status apache2
-          hostname -I
+          sudo systemctl restart apache2
+          hostname
